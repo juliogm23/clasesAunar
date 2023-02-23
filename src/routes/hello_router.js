@@ -1,23 +1,22 @@
 const express = require("express");
-const faker = require;
+const HelloWorldServices = require("../services/hello_world_service");
 
 const router = express.Router();
+const service = new HelloWorldServices();
 
 router.get("/", (req, res) => {
-  try {
-    res.send("Primera ejecución de la api");
-  } catch (e) {
-    console.log(e);
-  }
+  const greets = service.find();
+  res.json(greets);
+});
+
+router.get("/greet", (req, res) => {
+  res.send("Primera ejecución de la api");
 });
 
 router.get("/:id", (req, res) => {
   const { id } = req.params;
-  res.json({
-    id,
-    name: "none",
-    price: 200,
-  });
+  const greet = service.findOne(id);
+  res.json(greet);
 });
 
 module.exports = router;
