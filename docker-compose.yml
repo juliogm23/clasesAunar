@@ -6,7 +6,7 @@ services:
     image: mysql:5
     environment:
       - MYSQL_DATABASE=aunar_bd
-      - MYSQL_USER=androxus
+      - MYSQL_USER=root
       - MYSQL_ROOT_PASSWORD=admin123
       - MYSQL_PORT=3306
     ports:
