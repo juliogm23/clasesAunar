@@ -1,7 +1,3 @@
-const { controller } = require("../service/indexService");
-
-const { create } = controller;
-
 const Icontrollers = async (req, res, next) => {
   const { user, content } = req.body;
   try {
@@ -17,9 +13,3 @@ const Icontrollers = async (req, res, next) => {
 module.exports = {
   Icontrollers,
 };
-const controller = {};
-Icontrollers = (req, res) => {
-  res.send("Aplicacion ejecutando");
-};
-
-module.exports = controller;
