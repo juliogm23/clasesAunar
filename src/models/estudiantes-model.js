@@ -1,5 +1,6 @@
 const { Sequelize, DataTypes } = require("sequelize");
-const estudiantes = Sequelize.define(
+const sequelize = require("../database/sequelize");
+const estudiantes = sequelize.define(
   "estudiantes",
   {
     // definiendo los atributos de la tabla
@@ -24,6 +25,8 @@ const estudiantes = Sequelize.define(
     },
     id_estudiante: {
       type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
     },
     estado_financiero: {
       type: DataTypes.STRING,
@@ -40,7 +43,10 @@ const estudiantes = Sequelize.define(
     direccion: {
       type: DataTypes.STRING,
     },
-  }
-
+  },
   // Otras parametros de configuraciones
+  {
+    timestamps: false,
+  }
 );
+module.exports = estudiantes;

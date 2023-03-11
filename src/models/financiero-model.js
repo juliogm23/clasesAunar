@@ -1,5 +1,6 @@
 const { Sequelize, DataTypes } = require("sequelize");
-const financiero = Sequelize.define(
+const sequelize = require("../database/sequelize");
+const financiero = sequelize.define(
   "financiero",
   {
     // Definición de los atributos de la tabla
@@ -28,5 +29,8 @@ const financiero = Sequelize.define(
   },
   {
     // Otros parámetros de configuración
+
+    timestamps: false,
   }
 );
+module.exports = financiero;
