@@ -6,3 +6,4 @@ const sequelize = new Sequelize('proyectoaunar1', 'root','', {
   });
 
   module.exports = sequelize
+  

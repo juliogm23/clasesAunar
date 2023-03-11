@@ -1,7 +1,12 @@
+const estudiantes = require('../models/estudiantes')
+
+
 const controller = {}
 
-controller.index = (req, res) => {
-    res.send('Primera ejecución de la api')
+controller.index = async (req, res) => {
+
+    const d = await estudiantes.findAll()
+    res.send(d)
 }
 
 module.exports = controller
