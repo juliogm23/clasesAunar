@@ -145,4 +145,6 @@ package-lock.json
 
 mysql_data/
 
+.vscode
+
 # End of https://www.toptal.com/developers/gitignore/api/node

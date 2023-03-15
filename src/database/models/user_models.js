@@ -8,6 +8,39 @@ const UserSchema = {
     primaryKey: true,
     autoIncrement: true,
   },
+  name: {
+    allowNull: false,
+    type: DataTypes.STRING,
+  },
+  lastName: {
+    allowNull: false,
+    type: DataTypes.STRING,
+  },
+  documentType: {
+    allowNull: false,
+    type: DataTypes.ENUM('CC', 'TI', 'RC', 'CE', 'CI', 'DNI'),
+    defaultValue: 'CC',
+  },
+  documentNumber: {
+    allowNull: false,
+    type: DataTypes.INTEGER,
+    unique: true,
+  },
+  userType: {
+    allowNull: false,
+    type: DataTypes.ENUM('ADMIN','ESTUDIANTE'),
+    defaultValue: 'ADMIN',
+  },
+  userName: {
+    allowNull: false,
+    type: DataTypes.CHAR,
+    unique: true,
+  },
+  state: {
+    allowNull: false,
+    type: DataTypes.BOOLEAN,
+    defaultValue: false,
+  },
   email: {
     allowNull: false,
     type: DataTypes.STRING,
