@@ -1,7 +1,7 @@
 const Icontrollers = async (req, res, next) => {
   const { user, content } = req.body;
   try {
-    await create(user, content);
+    
     res.sendStatus(201);
     next();
   } catch (e) {
