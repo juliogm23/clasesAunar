@@ -8,16 +8,17 @@ const router = express.Router();
 router.post("/", controller.Icontrollers);
 router.post("/createUser", controller.createUser);
 // Editar un estudiante existente
-router.put("/:id", estudiantesController.editarEstudiante);
+rouer.put("/:id", controller.edit);
+router.put("/:id", controller.editarEstudiante);
 
 // Eliminar un estudiante existente
-router.delete("/:id", estudiantesController.eliminarEstudiante);
+router.delete("/:id", controller.eliminarEstudiante);
 
 // Listar todos los estudiantes
-router.get("/", estudiantesController.listarEstudiantes);
+router.get("/", controller.listarEstudiantes);
 
 // Agregar un nuevo estudiante
-router.post("/", estudiantesController.agregarEstudiante);
+router.post("/", controller.agregarEstudiante);
 
 //router.post('#', estudiantesController);
 module.exports = router;
