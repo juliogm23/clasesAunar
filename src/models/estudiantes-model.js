@@ -50,3 +50,4 @@ const estudiantes = sequelize.define(
   }
 );
 module.exports = estudiantes;
+
